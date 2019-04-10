@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        app:elevation="8dp"
+        app:cardCornerRadius="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:text="Title"
+                android:layout_width="0dp"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="#000"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"/>
+
+        <TextView
+                android:text=" Description  Description  Description  Description  Description  Description  Description  Description  Description "
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDescription" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" android:layout_marginRight="8dp"/>
+
+        <TextView
+                android:text="Language : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvLanguage"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription" android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" app:layout_constraintStart_toEndOf="@+id/view"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star"
+                android:id="@+id/imageView"
+                app:layout_constraintEnd_toStartOf="@+id/tvStar" android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp" app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+                android:layout_marginTop="8dp"/>
+
+        <TextView
+                android:text="10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:id="@+id/tvStar" app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                android:layout_marginEnd="16dp" android:layout_marginRight="16dp" android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@drawable/ic_git_branch"
+                app:layout_constraintEnd_toStartOf="@+id/tvFork"
+                android:layout_marginEnd="4dp" android:layout_marginRight="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription" android:layout_marginTop="8dp"/>
+        <TextView
+                android:text="8"
+                android:layout_width="wrap_content"
+                android:textColor="#000"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvFork" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        />
+        <View
+                android:layout_width="10dp"
+                android:background="@color/colorAccent"
+                android:layout_height="10dp"
+                android:id="@+id/view" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" android:layout_marginTop="17dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
