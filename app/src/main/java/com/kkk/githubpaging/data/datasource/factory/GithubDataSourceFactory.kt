@@ -11,14 +11,14 @@ import com.kkk.githubpaging.network.rx.SchedulerProvider
 import io.reactivex.Observable
 
 
-class GithubDataSourceFactory(private val apiService: ApiService,private val schedulerProvider: SchedulerProvider): DataSource.Factory<Int, RepoVO>() {
+class GithubDataSourceFactory(private val githubDataSource: GithubDataSource): DataSource.Factory<Int, RepoVO>() {
 
     var query:String=""
 
     private var dataSourceLiveData: MutableLiveData<GithubDataSource> = MutableLiveData()
 
     override fun create(): DataSource<Int, RepoVO> {
-        val githubDataSource = GithubDataSource(query,apiService,schedulerProvider)
+        githubDataSource.searchQuery = query
         dataSourceLiveData.postValue(githubDataSource)
         return githubDataSource
     }

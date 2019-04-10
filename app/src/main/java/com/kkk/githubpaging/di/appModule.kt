@@ -1,5 +1,6 @@
 package com.kkk.githubpaging.di
 
+import com.kkk.githubpaging.data.datasource.GithubDataSource
 import com.kkk.githubpaging.data.datasource.factory.GithubDataSourceFactory
 import com.kkk.githubpaging.data.repository.GithubRepository
 import com.kkk.githubpaging.data.repository.GithubRepositoryImpl
@@ -12,8 +13,8 @@ import org.koin.dsl.module.module
 val githubModule = module(definition = {
 
     //provide data source
-
-    single { GithubDataSourceFactory(get(),get())}
+    single { GithubDataSource(get(),get())}
+    single { GithubDataSourceFactory(get())}
 
     //provide data repository
     single<GithubRepository> { GithubRepositoryImpl(get()) }

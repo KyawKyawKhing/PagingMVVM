@@ -24,7 +24,6 @@ class GithubRepositoryImpl(
             .setEnablePlaceholders(false)
             .setInitialLoadSizeHint(10)
             .setPrefetchDistance(10)
-            .setPageSize(10)
             .build()
 
         val livePageListBuilder = LivePagedListBuilder(dataSourceFactory, config)
