@@ -5,21 +5,29 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log.i
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kkk.githubpaging.R
 import com.kkk.githubpaging.data.vo.GithubUIModel
 import com.kkk.githubpaging.ui.adapters.RepoListAdapter
 import com.kkk.githubpaging.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import org.kodein.di.Kodein
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.closestKodein
+import org.kodein.di.android.kodein
+import org.kodein.di.generic.instance
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),KodeinAware{
+    override val kodein: Kodein by kodein()
 
-    private val mViewModel: MainViewModel by viewModel()
+    private val mViewModel: MainViewModel by instance()
 
     private lateinit var mAdapter:RepoListAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
